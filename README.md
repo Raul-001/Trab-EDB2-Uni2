@@ -6,7 +6,11 @@ Implementação do algoritmo de ordenação HeapSort e árvores Binária, AVL e 
 
 # Participantes:
 Raul Ramalho
+
 Moisés Átila
+
 Vinicius Honório
+
 Carlos
+
 Tiego
