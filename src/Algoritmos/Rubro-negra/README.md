@@ -1,24 +1,24 @@
 ## O que foi feito?
 
-Dentro desta seção [./src/Algoritmos/Rubro-Negra] impletamos a ADT redBlackTree, proporcionando uma interface que provê os seguintes métodos inserção, busca, remoção e rotação.
+Nesta seção implementamos a ADT redBlackTree, proporcionando uma interface que provê os seguintes métodos inserção, busca, remoção e rotação à esquerda e à direita.
 
-## Como?
 
-Fora utilizado a linguagem de programação C++ 17 com o compilador gcc 13.3.0.
 
 ## Como rodar?
 
-Verifique se o compilador gcc está instalando na sua máquina.
+Verifique se o compilador gcc está instalado na sua máquina.
 
-Em seguida, dentro da pasta [./Rubro-negra] compiledo o código com:
+Em seguida, dentro da pasta [./Rubro-negra] compile o o código com:
 
 g++ rubronegra.cpp -o [nome_do_executável]
 
 e rode com:
 ./[nome_do_executável]
-
+obs.: os colchetes "[]" não devem entrar no código, são apenas exemplos de placeholder.
 
 ## Hardware, IDE e tecnicismos
+
+Fora utilizado a linguagem de programação C++ 17 com o compilador gcc 13.3.0.
 
 Especificações da máquina:
 
@@ -26,4 +26,5 @@ Especificações da máquina:
 
 Editor de texto VSCODE
 
-SO Ubuntu 24.04.1 LTS "noble", Linux 6.8.0-51-generic
+SO Ubuntu 24.04.1 LTS "noble"
+Kernel: Linux 6.8.0-51-generic
