@@ -7,14 +7,16 @@ Implementação do algoritmo de ordenação HeapSort e árvores Binária, AVL e 
 # Participantes:
 Raul Ramalho Lucena @ raulramalho2016@gmail.com
 
-Moisés Átila
+Moisés Átila Rodrigues Lima
 
-Vinicius Honório
+Vinicius Honório dos Santos
 
-Carlos
+Carlos Henrique da Silva Guimarães
 
-Tiego
+Tiego Rafael Belo da Rocha
 
 # Contribuição
 
 Raul - Criou o repositório github, implementou a árvore rubro-negra, inserção, busca, remoção e giro.
+
+Vinicius - Criou o fluxograma mostrando o passo a passo para remoção em uma árvore rubro-negra.
