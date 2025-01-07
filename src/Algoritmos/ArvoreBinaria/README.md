@@ -43,8 +43,11 @@ Além disso, foram realizados testes (baseados em exemplos vistos em sala de aul
 ### Inserção 
 A função responsável pela inserção de nós na Árvore binária é a `insert(int item)`. Primeiro ela cria um novo nó e verifica se a árvore está vazia, se estiver, o novo nó se torna a raiz da árvore. Caso contrário, percorre a árvore comparando o valor de cada nó com o valor do novo nó, se o item for menor ele vai para subárvore da esquerda, caso seja maior vai para a subárvore da direita. quando encontra a posição desejada insere o novo nó.
 
-![Árvore binária](testes_imgs/tree_insert_T1.png)
-![Árvore binária Inserção: 42](testes_imgs/tree_insert_T1_42.png)
+### Exemplos de Inserção em Árvore Binária
+
+| **Árvore Original**                | **Árvore Após Inserção**           |
+|------------------------------------|------------------------------------|
+| ![Antes](testes_imgs/tree_insert_T1.png) | ![Depois](testes_imgs/tree_insert_T1_42.png) |
 
 ### busca 
 
@@ -54,20 +57,24 @@ A função de busca foi implementada de forma iterativa em `search(node* current
 
 A função `remove(node*& currentNode, int item)` responsável pela remoção de nós da árvore, ela cobre os 3 casos. No primeiro caso onde o nó é uma folha ou seja não possuiu filhos, ela remove o nó diretamente ajustando para `null`. No segundo caso o nó possuiu um filho, ele substitui o nó a ser removido pelo seu filho e no terceiro e ultimo caso, o nó possuiu dois filhos nesse caso utilizando a função `successor()` para encontrar o menor valor da subárvore direita, ele substitui o valor do nó pelo sucessor e remove o nó da árvore.
 
-![remoção caso 1: 42](testes_imgs/tree_remove_T1.png)
-![remoção caso 1: 42](testes_imgs/tree_remove_T1_40.png)
-![remoção caso 2: 42](testes_imgs/tree_remove_T2.png)
-![remoção caso 2: 42](testes_imgs/tree_remove_T2_35.png)
-![remoção caso 3: 42](testes_imgs/tree_remove_T3.png)
-![remoção caso 3: 42](testes_imgs/tree_remove_T3_50.png)
+### Exemplos de Remoção em Árvore Binária
+
+|**Casos**                            | **Árvore Original**                | **Árvore Após Remoção**           |
+|-------------------------------------|------------------------------------|------------------------------------|
+| Nó folha removido                   | ![Antes](testes_imgs/tree_remove_T1.png)  | ![Depois](testes_imgs/tree_remove_T1_40.png) |
+| Nó com um filho removido            | ![Antes](testes_imgs/tree_remove_T2.png)  | ![Depois](testes_imgs/tree_remove_T2_35.png) |
+| Nó com dois filhos removido         | ![Antes](testes_imgs/tree_remove_T3.png)  | ![Depois](testes_imgs/tree_remove_T3_50.png) |
 
 ### Estratégia de balanceamento
 Um problema comum das árvores binárias é que, dependendo da ordem da lista de entrada, a árvore pode acabar perdendo sua estrutura balanceada e se tornando semelhante a uma lista. Isso ocorre, por exemplo, quando todos os valores da lista são sempre maiores em sequência, fazendo com que os elementos sejam inseridos apenas à esquerda. Da mesma forma, se os valores forem menores, eles podem ser inseridos à direita, ou até mesmo a árvore pode se tornar uma estrutura "zig-zag".
 
 Para evitar esse problema, implementei um método simples de balanceamento chamado `createBalancedTree()`. A ideia consiste em ordenar a lista antes de inseri-la na árvore. O próximo passo é calcular o elemento central dessa lista. Esse elemento central será usado como raiz da árvore, e os elementos à esquerda e à direita serão os filhos da raiz. O processo se repete recursivamente até que todos os elementos sejam inseridos na árvore de maneira balanceada.
 
-![Não balanceada](testes_imgs/tree_insert_T4.png)
-![Balanceada](testes_imgs/tree_insert_T4_balanced.png)
+### Exemplos de Balanceamento de Árvore Binária
+
+| **Árvore Não Balanceada**          | **Árvore Balanceada**              |
+|------------------------------------|------------------------------------|
+| ![Não balanceada](testes_imgs/tree_insert_T4.png) | ![Balanceada](testes_imgs/tree_insert_T4_balanced.png) |
 
 ---
 
