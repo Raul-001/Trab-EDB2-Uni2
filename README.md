@@ -20,3 +20,6 @@ Tiego Rafael Belo da Rocha @ tiegorafael@gmail.com
 Raul - Criou o repositório github, implementou a árvore rubro-negra, inserção, busca, remoção e rotação.
 
 Vinicius - Criou o fluxograma mostrando o passo a passo para remoção em uma árvore rubro-negra, auxiliou na implementação da busca em uma árvore rubro-negra.
+
+Moisés - Implementou a árvore binária de busca, incluindo inserção, remoção, busca e percursos, além dos testes correspondentes. Criou o fluxograma para a estratégia de balanceamento e registrou o tempo de execução dos testes dos algoritmos de ordenação.
+
