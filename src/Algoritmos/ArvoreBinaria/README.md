@@ -14,6 +14,7 @@ Este projeto implementa uma Árvore Binária de Busca com suporte às seguintes 
 - **Balanceamento**: Foi implementada uma estratégia de balanceamento para melhorar a eficiência da árvore para evitar pior caso.
 
 Além disso, foram realizados testes (baseados em exemplos vistos em sala de aula) para verificar a funcionalidade das operações implementadas. O **Graphviz** foi utilizado para gerar representações visuais das árvores resultantes.
+
 ---
 
 ## Ambiente Computacional
