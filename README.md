@@ -2,18 +2,18 @@
 Segunda unidade de Estruturas de Dados Básicas 2 - UFRN - IMD.
 
 # O que é?
-Implementação do algoritmo de ordenação HeapSort e árvores Binária, AVL e Rubro-Negra. 
+Implementação do algoritmo de ordenação HeapSort e comparação com os demais ( BubbleSort, QuickSort e MergeSort). Implementação de Árvores Binária, AVL e Rubro-Negra, e métodos inserção, busca, remoção e rotação. Criação de fluxogramas de remoção e breve video com exemplos.
 
 # Participantes:
 Raul Ramalho Lucena @ raulramalho2016@gmail.com
 
-Moisés Átila Rodrigues Lima
+Moisés Átila Rodrigues Lima @ moisesignnel@gmail.com
 
-Vinicius Honório dos Santos
+Vinicius Honório dos Santos @ vhonorio2003@gmail.com
 
-Carlos Henrique da Silva Guimarães
+Carlos Henrique da Silva Guimarães @ ch.guimaraes87@gmail.cm
 
-Tiego Rafael Belo da Rocha
+Tiego Rafael Belo da Rocha @ tiegorafael@gmail.com
 
 # Contribuição
 
