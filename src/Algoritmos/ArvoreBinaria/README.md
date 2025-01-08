@@ -49,11 +49,11 @@ A função responsável pela inserção de nós na Árvore binária é a `insert
 |------------------------------------|------------------------------------|
 | ![Antes](testes_imgs/tree_insert_T1.png) | ![Depois](testes_imgs/tree_insert_T1_42.png) |
 
-### busca 
+### Busca 
 
 A função de busca foi implementada de forma iterativa em `search(node* currentRoot, int item)`. Começando da raiz, enquanto o nó atual não for nulo e o item não for encontrado ele entra em dois casos: se o item for menor percorre a subárvore da esquerda ou se o item for maior percorre a subárvore da direita. No final retorna o nó ou `null` caso não encontre.
 
-### remoção
+### Remoção
 
 A função `remove(node*& currentNode, int item)` responsável pela remoção de nós da árvore, ela cobre os 3 casos. No primeiro caso onde o nó é uma folha ou seja não possuiu filhos, ela remove o nó diretamente ajustando para `null`. No segundo caso o nó possuiu um filho, ele substitui o nó a ser removido pelo seu filho e no terceiro e ultimo caso, o nó possuiu dois filhos nesse caso utilizando a função `successor()` para encontrar o menor valor da subárvore direita, ele substitui o valor do nó pelo sucessor e remove o nó da árvore.
 
