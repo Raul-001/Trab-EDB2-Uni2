@@ -35,7 +35,7 @@ Além disso, foram realizados testes (baseados em exemplos vistos em sala de aul
   - `BinarySearchTree.h` – Declaração dos métodos da Classe da árvore binária.
   - `testes_bst.cpp` – Arquivo de testes que valida as operações realizadas na árvore binária.
 - **Saídas visuais**:
-  - Arquivos `.dot` gerados pelo **Graphviz** para representação gráfica das árvores.
+  - Arquivos `.dot` gerados para representação gráfica das árvores.
 
 ---
 
