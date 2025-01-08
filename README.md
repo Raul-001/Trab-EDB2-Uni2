@@ -23,3 +23,4 @@ Vinicius - Criou o fluxograma mostrando o passo a passo para remoção em uma á
 
 Moisés - Implementou a árvore binária de busca, incluindo inserção, remoção, busca e percursos, além dos testes correspondentes. Criou o fluxograma para a estratégia de balanceamento e registrou o tempo de execução dos testes dos algoritmos de ordenação.
 
+Carlos - Implementou as funções de Heap (máxima e mínima) e as funções de alteração de prioridade, inserção, remoção (da raiz) e construção das heaps. Implementou o HeapSort e detalhou a comparação com os outros algoritmos de ordenação (BubbleSort, MergeSort e QuickSort).
