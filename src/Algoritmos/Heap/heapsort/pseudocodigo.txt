@@ -1,0 +1,35 @@
+FUNÇÃO criarHeap(vetor, inicio, final)
+    aux ← vetor[inicio]
+    filho ← (inicio * 2) + 1
+
+    ENQUANTO filho ≤ final FAÇA
+        SE filho < final E (filho + 1) ≤ final ENTÃO
+            SE vetor[filho] < vetor[filho + 1] ENTÃO
+                filho ← filho + 1
+            FIM_SE
+        FIM_SE
+
+        SE aux < vetor[filho] ENTÃO
+            vetor[inicio] ← vetor[filho]
+            inicio ← filho
+            filho ← (2 * inicio) + 1
+        SENÃO
+            filho ← final + 1
+        FIM_SE
+    FIM_ENQUANTO
+
+    vetor[inicio] ← aux
+FIM_FUNÇÃO
+
+FUNÇÃO heapSort(vetor, tamanho)
+    PARA i ← (tamanho - 1) / 2 ATÉ 0 PASSO -1 FAÇA
+        criarHeap(vetor, i, tamanho - 1)
+    FIM_PARA
+
+    PARA i ← tamanho - 1 ATÉ 1 PASSO -1 FAÇA
+        aux ← vetor[0]
+        vetor[0] ← vetor[i]
+        vetor[i] ← aux
+        criarHeap(vetor, 0, i - 1)
+    FIM_PARA
+FIM_FUNÇÃO
