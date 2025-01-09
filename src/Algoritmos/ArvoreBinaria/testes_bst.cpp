@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "BinarySearchTree.h" // Inclua sua implementação da árvore aqui
+#include "BinarySearchTree.h"
 
 void printOrder(BinarySearchTree& bst) {
     std::cout << "Percurso em pré-ordem: ";
