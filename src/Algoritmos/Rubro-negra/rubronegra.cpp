@@ -126,6 +126,8 @@ private:
         fixInsert(node);
     }
 
+    // percorre a árvore indo de nó em nó na esquerda até
+    // achar o nulo
     std::shared_ptr<Node<T>> minimum(std::shared_ptr<Node<T>> node) {
         while (node->left != nullptr) {
             node = node->left;
@@ -190,6 +192,9 @@ private:
         x->color = Color::BLACK;
     }
 
+    // u é o nó que será substituido
+    // v é o que substituirá
+    // transplant é basicamente um swap
     void transplant(std::shared_ptr<Node<T>> u, std::shared_ptr<Node<T>> v) {
         if (u->parent == nullptr) {
             root = v;
@@ -242,6 +247,8 @@ private:
     }
 
 
+    // Para o valor dado, realiza uma busca recursiva
+    // até encontra-lo
     std::shared_ptr<Node<T>> searchNode(std::shared_ptr<Node<T>> root, T key) {
         if (root == nullptr || root->data == key) {
             return root;
@@ -270,6 +277,8 @@ public:
         }
     }
 
+
+    // Para o valor dado, retorna um bool
     bool search(T value) {
         auto node = searchNode(root, value);
         return node != nullptr;
