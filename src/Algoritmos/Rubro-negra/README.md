@@ -7,11 +7,16 @@ Nesta seção implementamos a ADT redBlackTree, proporcionando uma interface que
 Verifique se o compilador gcc está instalado na sua máquina.
 
 Em seguida, dentro da pasta [./Rubro-negra] compile o o código com:
-
+```
 g++ rubronegra.cpp -o [nome_do_executável]
+```
 
 e rode com:
+
+```
 ./[nome_do_executável]
+```
+
 obs.: os colchetes "[]" não devem entrar no código, são apenas exemplos de placeholder.
 
 # Hardware, IDE e tecnicismos
