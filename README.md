@@ -17,7 +17,7 @@ Tiego Rafael Belo da Rocha @ tiegorafael@gmail.com
 
 # Contribuição
 
-Raul - Criou o repositório github, implementou a árvore rubro-negra, inserção, busca, remoção e rotação.
+Raul - Criou o repositório github, implementou a árvore rubro-negra, inserção, busca, remoção e rotação. Aprimorou a legibilidade do código e gravou o video.
 
 Vinicius - Criou o fluxograma mostrando o passo a passo para remoção em uma árvore rubro-negra; implementou busca em uma árvore rubro-negra; revisou códigos de implementação da arvore rubro-negra.
 
