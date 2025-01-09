@@ -407,6 +407,7 @@ int main()
 {
     RedBlackTree<int> rbt;
 
+    // valores do item 4.3
     rbt.insert(15);
     rbt.insert(18);
     rbt.insert(20);
