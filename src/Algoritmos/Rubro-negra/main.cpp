@@ -1,10 +1,15 @@
 #include <iostream>
 #include <memory>
 
-enum class Color { RED, BLACK };
+enum class Color
+{
+    RED,
+    BLACK
+};
 
 template <typename T>
-struct Node {
+struct Node
+{
     T data;
     Color color;
     // Evita a necessidade de lidar com alocação manual
@@ -14,27 +19,34 @@ struct Node {
 };
 
 template <typename T>
-class RedBlackTree {
+class RedBlackTree
+{
 private:
-
     // Root será inicializada no Construtor como nullptr
     // A expansão do template se dá em tempo de execução
     // O que previne a necessidade de inicializar o Ctro.
     std::shared_ptr<Node<T>> root;
 
     // Nome autosugestivo
-    void leftRotate(std::shared_ptr<Node<T>> x) {
+    void leftRotate(std::shared_ptr<Node<T>> x)
+    {
         auto y = x->right;
         x->right = y->left;
-        if (y->left != nullptr) {
+        if (y->left != nullptr)
+        {
             y->left->parent = x;
         }
         y->parent = x->parent;
-        if (x->parent == nullptr) {
+        if (x->parent == nullptr)
+        {
             root = y;
-        } else if (x == x->parent->left) {
+        }
+        else if (x == x->parent->left)
+        {
             x->parent->left = y;
-        } else {
+        }
+        else
+        {
             x->parent->right = y;
         }
         y->left = x;
@@ -42,18 +54,25 @@ private:
     }
 
     // Nome autosugestivo/2
-    void rightRotate(std::shared_ptr<Node<T>> x) {
+    void rightRotate(std::shared_ptr<Node<T>> x)
+    {
         auto y = x->left;
         x->left = y->right;
-        if (y->right != nullptr) {
+        if (y->right != nullptr)
+        {
             y->right->parent = x;
         }
         y->parent = x->parent;
-        if (x->parent == nullptr) {
+        if (x->parent == nullptr)
+        {
             root = y;
-        } else if (x == x->parent->right) {
+        }
+        else if (x == x->parent->right)
+        {
             x->parent->right = y;
-        } else {
+        }
+        else
+        {
             x->parent->left = y;
         }
         y->right = x;
@@ -61,17 +80,25 @@ private:
     }
 
     // fixInsert de inserção balanceada, e não inserção fixa.
-    void fixInsert(std::shared_ptr<Node<T>> k) {
-        while (k->parent && k->parent->color == Color::RED) {
-            if (k->parent == k->parent->parent->left) {
+    // realiza o balanceamento da árvore após inserção
+    void fixInsert(std::shared_ptr<Node<T>> k)
+    {
+        while (k->parent && k->parent->color == Color::RED)
+        {
+            if (k->parent == k->parent->parent->left)
+            {
                 auto uncle = k->parent->parent->right;
-                if (uncle && uncle->color == Color::RED) {
+                if (uncle && uncle->color == Color::RED)
+                {
                     k->parent->color = Color::BLACK;
                     uncle->color = Color::BLACK;
                     k->parent->parent->color = Color::RED;
                     k = k->parent->parent;
-                } else {
-                    if (k == k->parent->right) {
+                }
+                else
+                {
+                    if (k == k->parent->right)
+                    {
                         k = k->parent;
                         leftRotate(k);
                     }
@@ -79,15 +106,21 @@ private:
                     k->parent->parent->color = Color::RED;
                     rightRotate(k->parent->parent);
                 }
-            } else {
+            }
+            else
+            {
                 auto uncle = k->parent->parent->left;
-                if (uncle && uncle->color == Color::RED) {
+                if (uncle && uncle->color == Color::RED)
+                {
                     k->parent->color = Color::BLACK;
                     uncle->color = Color::BLACK;
                     k->parent->parent->color = Color::RED;
                     k = k->parent->parent;
-                } else {
-                    if (k == k->parent->left) {
+                }
+                else
+                {
+                    if (k == k->parent->left)
+                    {
                         k = k->parent;
                         rightRotate(k);
                     }
@@ -101,25 +134,36 @@ private:
     }
 
     // metodo autoevidente
-    void insertNode(std::shared_ptr<Node<T>> node) {
+    // insere nodo
+    void insertNode(std::shared_ptr<Node<T>> node)
+    {
         std::shared_ptr<Node<T>> y = nullptr;
         std::shared_ptr<Node<T>> x = root;
 
-        while (x != nullptr) {
+        while (x != nullptr)
+        {
             y = x;
-            if (node->data < x->data) {
+            if (node->data < x->data)
+            {
                 x = x->left;
-            } else {
+            }
+            else
+            {
                 x = x->right;
             }
         }
 
         node->parent = y;
-        if (y == nullptr) {
+        if (y == nullptr)
+        {
             root = node;
-        } else if (node->data < y->data) {
+        }
+        else if (node->data < y->data)
+        {
             y->left = node;
-        } else {
+        }
+        else
+        {
             y->right = node;
         }
 
@@ -128,30 +172,40 @@ private:
 
     // percorre a árvore indo de nó em nó na esquerda até
     // achar o nulo
-    std::shared_ptr<Node<T>> minimum(std::shared_ptr<Node<T>> node) {
-        while (node->left != nullptr) {
+    std::shared_ptr<Node<T>> minimum(std::shared_ptr<Node<T>> node)
+    {
+        while (node->left != nullptr)
+        {
             node = node->left;
         }
         return node;
     }
 
-    // Inserção balanceada
+    // Remoção balanceada
     // notação análoga à fixInsert
-    void fixRemove(std::shared_ptr<Node<T>> x) {
-        while (x != root && x->color == Color::BLACK) {
-            if (x == x->parent->left) {
+    void fixRemove(std::shared_ptr<Node<T>> x)
+    {
+        while (x != root && x->color == Color::BLACK)
+        {
+            if (x == x->parent->left)
+            {
                 auto w = x->parent->right;
-                if (w->color == Color::RED) {
+                if (w->color == Color::RED)
+                {
                     w->color = Color::BLACK;
                     x->parent->color = Color::RED;
                     leftRotate(x->parent);
                     w = x->parent->right;
                 }
-                if (w->left->color == Color::BLACK && w->right->color == Color::BLACK) {
+                if (w->left->color == Color::BLACK && w->right->color == Color::BLACK)
+                {
                     w->color = Color::RED;
                     x = x->parent;
-                } else {
-                    if (w->right->color == Color::BLACK) {
+                }
+                else
+                {
+                    if (w->right->color == Color::BLACK)
+                    {
                         w->left->color = Color::BLACK;
                         w->color = Color::RED;
                         rightRotate(w);
@@ -163,19 +217,26 @@ private:
                     leftRotate(x->parent);
                     x = root;
                 }
-            } else {
+            }
+            else
+            {
                 auto w = x->parent->left;
-                if (w->color == Color::RED) {
+                if (w->color == Color::RED)
+                {
                     w->color = Color::BLACK;
                     x->parent->color = Color::RED;
                     rightRotate(x->parent);
                     w = x->parent->left;
                 }
-                if (w->right->color == Color::BLACK && w->left->color == Color::BLACK) {
+                if (w->right->color == Color::BLACK && w->left->color == Color::BLACK)
+                {
                     w->color = Color::RED;
                     x = x->parent;
-                } else {
-                    if (w->left->color == Color::BLACK) {
+                }
+                else
+                {
+                    if (w->left->color == Color::BLACK)
+                    {
                         w->right->color = Color::BLACK;
                         w->color = Color::RED;
                         leftRotate(w);
@@ -195,103 +256,135 @@ private:
     // u é o nó que será substituido
     // v é o que substituirá
     // é basicamente um swap
-    void transplant(std::shared_ptr<Node<T>> u, std::shared_ptr<Node<T>> v) {
-        if (u->parent == nullptr) {
+    void changeNodes(std::shared_ptr<Node<T>> u, std::shared_ptr<Node<T>> v)
+    {
+        if (u->parent == nullptr)
+        {
             root = v;
-        } else if (u == u->parent->left) {
+        }
+        else if (u == u->parent->left)
+        {
             u->parent->left = v;
-        } else {
+        }
+        else
+        {
             u->parent->right = v;
         }
-        if (v != nullptr) {
+        if (v != nullptr)
+        {
             v->parent = u->parent;
         }
     }
 
-    void removeNode(std::shared_ptr<Node<T>> z) {
+    // remove o Nó
+    void removeNode(std::shared_ptr<Node<T>> z)
+    {
         std::shared_ptr<Node<T>> y = z;
         std::shared_ptr<Node<T>> x;
         Color originalColor = y->color;
 
-        if (z->left == nullptr) {
+        if (z->left == nullptr)
+        {
             x = z->right;
-            transplant(z, z->right);
-        } else if (z->right == nullptr) {
+            changeNodes(z, z->right);
+        }
+        else if (z->right == nullptr)
+        {
             x = z->left;
-            transplant(z, z->left);
-        } else {
+            changeNodes(z, z->left);
+        }
+        else
+        {
             y = minimum(z->right);
             originalColor = y->color;
             x = y->right;
-            if (y->parent == z) {
-                if (x != nullptr) {
+            if (y->parent == z)
+            {
+                if (x != nullptr)
+                {
                     x->parent = y;
                 }
-            } else {
-                transplant(y, y->right);
+            }
+            else
+            {
+                changeNodes(y, y->right);
                 y->right = z->right;
-                if (y->right != nullptr) {
+                if (y->right != nullptr)
+                {
                     y->right->parent = y;
                 }
             }
-            transplant(z, y);
+            changeNodes(z, y);
             y->left = z->left;
-            if (y->left != nullptr) {
+            if (y->left != nullptr)
+            {
                 y->left->parent = y;
             }
             y->color = z->color;
         }
-        if (originalColor == Color::BLACK) {
+        if (originalColor == Color::BLACK)
+        {
             fixRemove(x);
         }
     }
 
-
     // Para o valor dado, realiza uma busca recursiva
     // até encontra-lo
-    std::shared_ptr<Node<T>> searchNode(std::shared_ptr<Node<T>> root, T key) {
-        if (root == nullptr || root->data == key) {
+    std::shared_ptr<Node<T>> searchNode(std::shared_ptr<Node<T>> root, T target)
+    {
+        if (root == nullptr || root->data == target)
+        {
             return root;
         }
-        if (key < root->data) {
-            return searchNode(root->left, key);
+        if (target < root->data)
+        {
+            return searchNode(root->left, target);
         }
-        return searchNode(root->right, key);
+        return searchNode(root->right, target);
     }
 
 public:
-
+    // Interfaces ao programador
     // Ctro.
     RedBlackTree() : root(nullptr) {}
 
-    void insert(T value) {
+    void insert(T value)
+    {
         // Boa sorte em descobrir a tipagem sem auto
         auto node = std::make_shared<Node<T>>(value);
         insertNode(node);
     }
 
-    void remove(T value) {
+    // Interface que remove o nó para o programador
+    void remove(T value)
+    {
         auto node = searchNode(root, value);
-        if (node != nullptr) {
+        if (node != nullptr)
+        {
             removeNode(node);
         }
     }
 
-
     // Para o valor dado, retorna um bool
-    bool search(T value) {
+    bool search(T value)
+    {
         auto node = searchNode(root, value);
         return node != nullptr;
     }
 
-    void printTree(std::shared_ptr<Node<T>> root, std::string indent = "", bool last = true) {
-        if (root != nullptr) {
+    void printTree(std::shared_ptr<Node<T>> root, std::string indent = "", bool last = true)
+    {
+        if (root != nullptr)
+        {
             // Direciona a string indent ao stream de saída
             std::cout << indent;
-            if (last) {
+            if (last)
+            {
                 std::cout << "R----";
                 indent += "   ";
-            } else {
+            }
+            else
+            {
                 std::cout << "L----";
                 indent += "|  ";
             }
@@ -304,12 +397,14 @@ public:
     }
 
     // Oferece uma interface ao programador
-    void displayTree() {
+    void showTree()
+    {
         printTree(root);
     }
 };
 
-int main() {
+int main()
+{
     RedBlackTree<int> rbt;
 
     rbt.insert(15);
@@ -328,7 +423,7 @@ int main() {
     rbt.insert(50);
 
     std::cout << "Árvore Rubro-Negra após inserções: \n";
-    rbt.displayTree();
+    rbt.showTree();
 
     // rbt.remove(15); // ta dando segFault
 

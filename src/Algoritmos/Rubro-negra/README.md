@@ -8,7 +8,7 @@ Verifique se o compilador gcc está instalado na sua máquina.
 
 Em seguida, dentro da pasta [./Rubro-negra] compile o o código com:
 ```
-g++ rubronegra.cpp -o [nome_do_executável]
+g++ main.cpp -o [nome_do_executável]
 ```
 
 e rode com:
