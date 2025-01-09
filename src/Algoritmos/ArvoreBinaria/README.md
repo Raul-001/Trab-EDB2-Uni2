@@ -78,6 +78,13 @@ Para evitar esse problema, implementei um método simples de balanceamento chama
 
 ---
 
+## Demonstração em Vídeo
+
+Vídeo mostrando o código implementado e os testes realizados:
+[Assista aqui](https://youtu.be/KWK1pbfuads)
+
+
+---
 ## Compilar e executar
 
 Para Compilar os testes:
