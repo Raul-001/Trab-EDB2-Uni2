@@ -194,7 +194,7 @@ private:
 
     // u é o nó que será substituido
     // v é o que substituirá
-    // transplant é basicamente um swap
+    // é basicamente um swap
     void transplant(std::shared_ptr<Node<T>> u, std::shared_ptr<Node<T>> v) {
         if (u->parent == nullptr) {
             root = v;

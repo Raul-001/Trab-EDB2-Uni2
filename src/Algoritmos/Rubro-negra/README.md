@@ -36,6 +36,9 @@ Kernel: Linux 6.8.0-51-generic
 
 Implementação de uma árvore rubro-negra em C++ com operações de inserção, remoção e busca. A seguir as principais funções presentes e um resumo delas.
 
+### Estratégia de balanceamento:
+O balanceamento da redBlackTree se dá através das funções de rotações e fix.
+
 ### insert(T value):
 
 Insere um valor na árvore. Cria um novo nó e chama a função ```insertNode``` para adicioná-lo à árvore e balanceá-la.
