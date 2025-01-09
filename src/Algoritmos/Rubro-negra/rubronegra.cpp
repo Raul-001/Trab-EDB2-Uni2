@@ -303,6 +303,7 @@ public:
         }
     }
 
+    // Oferece uma interface ao programador
     void displayTree() {
         printTree(root);
     }
@@ -329,11 +330,7 @@ int main() {
     std::cout << "Árvore Rubro-Negra após inserções: \n";
     rbt.displayTree();
 
-    rbt.remove(15);
-    std::cout << "\nRemoção do 15: \n";
-    rbt.displayTree();
-
-    std::cout << "\nBusca do elemento 20: " << (rbt.search(20) ? "Encontrado" : "Não encontrado") << std::endl;
+    // rbt.remove(15); // ta dando segFault
 
     return 0;
 }
