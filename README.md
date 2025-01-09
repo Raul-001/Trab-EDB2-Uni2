@@ -1,6 +1,8 @@
 # Trabalho-EDB2-Uni2
 Segunda unidade de Estruturas de Dados Básicas 2 - UFRN - IMD.
 
+Observação: Dado os tamanhos dos videos, é necessario baixa-los para assisti-los.
+
 # O que é?
 Implementação do algoritmo de ordenação HeapSort e comparação com os demais ( BubbleSort, QuickSort e MergeSort). Implementação de Árvores Binária, AVL e Rubro-Negra, e métodos inserção, busca, remoção e rotação. Criação de fluxogramas de remoção e breve video com exemplos.
 
