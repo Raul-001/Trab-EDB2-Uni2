@@ -309,23 +309,31 @@ public:
 };
 
 int main() {
-    RedBlackTree<int> tree;
+    RedBlackTree<int> rbt;
 
-    tree.insert(10);
-    tree.insert(20);
-    tree.insert(30);
-    tree.insert(15);
-    tree.insert(25);
-    tree.insert(5);
+    rbt.insert(15);
+    rbt.insert(18);
+    rbt.insert(20);
+    rbt.insert(35);
+    rbt.insert(32);
+    rbt.insert(38);
+    rbt.insert(30);
+    rbt.insert(40);
+    rbt.insert(32);
+    rbt.insert(45);
+    rbt.insert(48);
+    rbt.insert(52);
+    rbt.insert(60);
+    rbt.insert(50);
 
     std::cout << "Árvore Rubro-Negra após inserções: \n";
-    tree.displayTree();
+    rbt.displayTree();
 
-    tree.remove(15);
+    rbt.remove(15);
     std::cout << "\nRemoção do 15: \n";
-    tree.displayTree();
+    rbt.displayTree();
 
-    std::cout << "\nBusca do elemento 20: " << (tree.search(20) ? "Encontrado" : "Não encontrado") << std::endl;
+    std::cout << "\nBusca do elemento 20: " << (rbt.search(20) ? "Encontrado" : "Não encontrado") << std::endl;
 
     return 0;
 }
