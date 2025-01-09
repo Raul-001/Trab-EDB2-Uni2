@@ -1,5 +1,5 @@
 /**
- * @file tree.h
+ * @file BinarySearchTree.h
  * @brief Declaração da classe BinarySearchTree e estrutura do nó para uma árvore binária de busca.
  * 
  * Este arquivo contém a definição da estrutura "node" e a declaração da classe "BinarySearchTree",
