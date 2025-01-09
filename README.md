@@ -24,3 +24,5 @@ Vinicius - Criou o fluxograma mostrando o passo a passo para remoção em uma á
 Moisés - Implementou a árvore binária de busca, incluindo inserção, remoção, busca e percursos, além dos testes correspondentes. Criou o fluxograma para a estratégia de balanceamento e registrou o tempo de execução dos testes dos algoritmos de ordenação.
 
 Carlos - Implementou as funções de Heap (máxima e mínima) e as funções de alteração de prioridade, inserção, remoção (da raiz) e construção das heaps. Fez o pseudocódigo do HeapSort e realizou sua implementação, detalhando a comparação com os outros algoritmos de ordenação (BubbleSort, MergeSort e QuickSort).
+
+Tiego - Implementação das funções de rotação, inserção, remoção e busca em árvores AVL; execução dos testes referentes a árvore AVL; implementação da função de criação de árvore AVL com valores inteiros de uma lista e sua representação gráfica; vídeo de apresentação para a AVL.
