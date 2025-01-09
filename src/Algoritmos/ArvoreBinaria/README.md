@@ -96,7 +96,7 @@ Após compilar e executar os testes, o terminal exibirá cada teste, mostrando t
 ```bash
 dot -Tpng tree_insert_T1.dot -o tree_insert_T1.png
 dot -Tpng tree_insert_T1_42.dot -o tree_insert_T1_42.png
-dot -Tpng tree_insert_T2.dot -o tree_insert_T2.pngA
+dot -Tpng tree_insert_T2.dot -o tree_insert_T2.png
 dot -Tpng tree_insert_T2_32.dot -o tree_insert_T2_32.png
 dot -Tpng tree_insert_T3.dot -o tree_insert_T3.png
 dot -Tpng tree_insert_T3_28.dot -o tree_insert_T3_28.png
