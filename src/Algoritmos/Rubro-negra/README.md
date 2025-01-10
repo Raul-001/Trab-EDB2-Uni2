@@ -2,6 +2,10 @@
 
 Nesta seção implementamos a ADT redBlackTree, proporcionando uma interface que provê os seguintes métodos inserção, busca, remoção e rotação à esquerda e à direita.
 
+# Apresentação em video:
+
+https://youtu.be/PcP1r3NaSUo
+
 # Como rodar?
 
 Verifique se o compilador gcc está instalado na sua máquina.
